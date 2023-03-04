@@ -1,0 +1,11 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.tabla{
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid white;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: 16px Helvetica, Arial, sans-serif;
+    flex-grow: 1
+}

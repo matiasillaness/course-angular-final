@@ -1,14 +1,27 @@
-
 .sidenav-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  } 
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 55px);
+  }
+.component{
+    flex: 1;
+   }
   .navbar {
     height: 55px;
-    
   }
   .sidenav {
     flex: 1;
     background-color: #212121;
   }
+
+  .component {
+    flex-grow: 1;
+  }
+
+
+
+
+  .component-container {
+    flex: 1;
+  }
+  

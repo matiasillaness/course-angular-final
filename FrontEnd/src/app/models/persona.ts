@@ -1,5 +1,5 @@
 export interface Persona{
-    id: number;
+    id: string;
     nombre: string;
     apellido: string;
     dni: number;
@@ -7,4 +7,5 @@ export interface Persona{
     provincia: string;
     ciudad: string;
     fechaNacimiento: string;
+    direccion: string;
 }

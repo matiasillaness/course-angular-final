@@ -1,8 +1,10 @@
 <mat-toolbar color="primary">
     <span appFontSize>CRUD Alumnos</span>
     <span class="example-spacer"></span>
-    <button mat-button>Cargar Alumno</button>
-    <button mat-button>Ver Alumnos</button>
+    <button mat-button>Inicio</button>
+    <button mat-button routerLink="alumno/cargar">Cargar Alumno</button>
+    <button mat-button routerLink="alumno/lista">Ver Alumnos</button>
     <button mat-button>Reportes</button>
     <button mat-button><mat-icon>logout</mat-icon></button>
 </mat-toolbar>
+<router-outlet></router-outlet>
