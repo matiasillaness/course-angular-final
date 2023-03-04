@@ -9,7 +9,7 @@
   <!-- Nombre Completo Column -->
   <ng-container matColumnDef="nombreCompleto">
     <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>
-    <td mat-cell *matCellDef="let element"> {{element | nombreCompleto}} </td>
+    <td mat-cell *matCellDef="let element"> {{element | nombreCompleto | async}} </td>
   </ng-container>
 
 
@@ -40,7 +40,7 @@
   <!-- Fecha de Nacimiento Column -->
   <ng-container matColumnDef="fechaNacimiento">
     <th mat-header-cell *matHeaderCellDef> Fecha de Nacimiento </th>
-    <td mat-cell *matCellDef="let element"> {{element.fechaNacimiento}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.fecha_nac}} </td>
   </ng-container>
 
   <!-- Carrera Column -->

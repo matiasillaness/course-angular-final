@@ -2,17 +2,33 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EditarAlumnoComponent } from './components/editar-alumno/editar-alumno.component';
 import { AlumnoRoutingModule } from './alumno-routing.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RecursosAlumnoService } from './service/recursos-alumno.service';
+import { FormAlumnoComponent } from './components/form-alumno/form-alumno.component';
+import { GridAlumnoComponent } from './components/grid-alumno/grid-alumno.component';
+import { SharedModule } from '../shared/shared.module';
+import { AppModule } from '../app.module';
+
+
 
 
 
 @NgModule({
+
+  providers: [
+    RecursosAlumnoService,
+
+  ],
   declarations: [
     EditarAlumnoComponent,
-    
+    FormAlumnoComponent,
+    GridAlumnoComponent
   ],
   imports: [
     CommonModule,
-    AlumnoRoutingModule
+    AlumnoRoutingModule,
+    SharedModule,
+    AppModule
   ]
 })
 export class AlumnoModule { }

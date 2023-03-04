@@ -6,6 +6,6 @@ export interface Persona{
     genero: string;
     provincia: string;
     ciudad: string;
-    fechaNacimiento: string;
+    fecha_nac: string;
     direccion: string;
 }

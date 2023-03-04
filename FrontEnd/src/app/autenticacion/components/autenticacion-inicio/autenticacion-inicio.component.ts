@@ -7,9 +7,9 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 })
 export class AutenticacionInicioComponent implements OnInit, OnChanges{
 
-  hidden!: boolean;
+  hidden?: boolean = false;
   ngOnInit(): void {
-   
+    
   }
  
   ngOnChanges(): void {
@@ -23,4 +23,6 @@ export class AutenticacionInicioComponent implements OnInit, OnChanges{
   showParent() {
     return this.hidden = false
   }
+
+  
 }

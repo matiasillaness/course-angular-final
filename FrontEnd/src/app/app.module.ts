@@ -21,6 +21,7 @@ import { AgregarCursoComponent } from './cursos/components/agregar-curso/agregar
 import { EditarCursoComponent } from './cursos/components/editar-curso/editar-curso.component';
 import { ListarCursoComponent } from './cursos/components/listar-curso/listar-curso.component';
 import { AlumnoRoutingModule } from './alumno/alumno-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -34,8 +35,6 @@ import { AlumnoRoutingModule } from './alumno/alumno-routing.module';
     AppComponent,
     NavbarComponent,
     ToolbarComponent,
-    FormAlumnoComponent,
-    GridAlumnoComponent,
     FooterComponent,
     NombreCompletoPipe,
     FontSizeDirective,
@@ -44,6 +43,7 @@ import { AlumnoRoutingModule } from './alumno/alumno-routing.module';
     AgregarCursoComponent,
     EditarCursoComponent,
     ListarCursoComponent,
+    NombreCompletoPipe
    
   ],
   imports: [
@@ -52,9 +52,14 @@ import { AlumnoRoutingModule } from './alumno/alumno-routing.module';
     BrowserAnimationsModule,
     SharedModule,
     AppRoutingModule,
-    AlumnoRoutingModule
+    AlumnoRoutingModule,
+    HttpClientModule,
+    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    NombreCompletoPipe
+  ]
 })
 export class AppModule { }
