@@ -11,7 +11,6 @@ const routes: Routes = [
     path: 'alumno',
     loadChildren: () => import('./alumno/alumno.module').then((m) => m.AlumnoModule),
     canLoad: [SesionGuard]
-    
   },
   
   {

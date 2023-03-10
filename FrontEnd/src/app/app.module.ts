@@ -36,14 +36,12 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     ToolbarComponent,
     FooterComponent,
-    NombreCompletoPipe,
     FontSizeDirective,
     NoEncontradoComponent,
     InicioComponent,
     AgregarCursoComponent,
     EditarCursoComponent,
     ListarCursoComponent,
-    NombreCompletoPipe
    
   ],
   imports: [
@@ -59,7 +57,7 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [],
   bootstrap: [AppComponent],
   exports: [
-    NombreCompletoPipe
+    
   ]
 })
 export class AppModule { }

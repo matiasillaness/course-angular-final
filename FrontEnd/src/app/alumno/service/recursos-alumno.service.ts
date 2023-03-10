@@ -59,4 +59,17 @@ export class RecursosAlumnoService {
     return throwError(() => new Error('Error en el procesamiento de cursos'));
   }
 
+
+
+  private alumno: Alumno | null = null;
+
+  getAlumno(): Alumno | null {
+    return this.alumno;
+  }
+
+  setAlumno(alumno: Alumno): void {
+    this.alumno = alumno;
+  }
+
+  
 }

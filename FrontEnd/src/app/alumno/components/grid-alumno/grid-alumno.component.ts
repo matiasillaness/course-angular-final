@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Alumno } from 'src/app/models/alumno';
 import { MatTableDataSource } from '@angular/material/table';
 import { NombreCompletoPipe } from 'src/app/pipes/nombre-completo.pipe';
@@ -17,21 +17,34 @@ import { Subscription } from 'rxjs';
 
 })
 export class GridAlumnoComponent implements OnInit, OnDestroy{
+
   
   suscripcion!: Subscription;
   listAlumnos !: Alumno[];
   dataSource !: MatTableDataSource<Alumno>;
   columnas: string[] = ['id', 'nombreCompleto', 'dni', 'genero', 'provincia', 'ciudad', 'fechaNacimiento', 'carrera', 'legajo', 'acciones'];
-
   
-
-
-  
-  constructor(
-    private alumnoService: RecursosAlumnoService
-    ){ 
+  constructor(private alumnoService: RecursosAlumnoService){ 
+   
   }
+  
+ 
 
+
+  
+ /*  alu: object = getId(alumno: Alumno) {
+    return alumno;
+  }; */
+
+  alumno !: Alumno
+  
+  GetId(alumno: Alumno){
+    return this.alumno = alumno, console.log()
+  };
+
+ 
+  
+ 
   ngOnInit(): void {
     console.log("Instanciando MatTAbleDataSource");
     this.dataSource = new MatTableDataSource<Alumno>();
@@ -39,15 +52,15 @@ export class GridAlumnoComponent implements OnInit, OnDestroy{
       console.log("Agregando datos al MatTAbleDataSource");
       this.dataSource.data = alumnos;
       console.log(alumnos)
+      alumnos = this.listAlumnos
     });
     console.log("Ultima linea del ngOnInit");
-   
+    
     
   }
 
   ngOnDestroy(){
     this.suscripcion.unsubscribe();
   }
-
-  
 }
+

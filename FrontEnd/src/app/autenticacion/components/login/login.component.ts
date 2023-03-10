@@ -17,11 +17,11 @@ export class LoginComponent implements OnInit, OnDestroy{
 
   constructor(
     private loginService: LoginService,
-    private autenticacion: AutenticacionInicioComponent
+   
   ){ }
   
   ngOnDestroy(): void {
-    this.autenticacion.hidden = false
+   
   }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit, OnDestroy{
       password: new FormControl(),
       tipoAcceso: new FormControl()
     });
-    this.autenticacion.hidden = true
+    
   }
 
   login(){

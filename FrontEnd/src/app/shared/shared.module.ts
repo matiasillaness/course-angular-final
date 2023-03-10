@@ -30,13 +30,15 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
-import { NombreCompletoPipe } from '../pipes/nombre-completo.pipe';
+
 
 
 
 
 @NgModule({
-  declarations: [ ],
+  declarations: [ 
+  
+  ],
   imports: [
     CommonModule,
     MatSlideToggleModule,
@@ -77,6 +79,7 @@ import { NombreCompletoPipe } from '../pipes/nombre-completo.pipe';
     MatInputModule,
     MatCardModule,
     MatPaginatorModule,
+    
 
 
    

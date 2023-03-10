@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-autenticacion-inicio',
@@ -8,13 +8,17 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 export class AutenticacionInicioComponent implements OnInit, OnChanges{
 
   hidden?: boolean = false;
-  ngOnInit(): void {
-    
+  ngOnInit(): void { 
+    window.addEventListener("popstate", (ev: PopStateEvent): void => { 
+      this.hidden = false; 
+      console.log(ev); //muestra el evento popstate
+    }); 
   }
  
   ngOnChanges(): void {
-    this.showParent()
+  
   }
+
 
   hideParent() {
     return this.hidden = true

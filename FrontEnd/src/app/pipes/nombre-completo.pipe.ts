@@ -7,13 +7,9 @@ import { Alumno } from '../models/alumno';
 })
 export class NombreCompletoPipe implements PipeTransform {
 
-  transform(value: Alumno, ...args: unknown[]): Promise<string> {
-    return this.getNombreCompleto(value);
-  }
-
-  private async getNombreCompleto(alumno: Alumno): Promise<string> {
-    const nombre = alumno.nombre || '';
-    const apellido = alumno.apellido || '';
+  transform(value: Alumno): string {
+    const nombre = value.nombre || '';
+    const apellido = value.apellido || '';
     return `${nombre} ${apellido}`;
   }
 

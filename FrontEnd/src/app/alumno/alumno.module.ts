@@ -7,7 +7,8 @@ import { RecursosAlumnoService } from './service/recursos-alumno.service';
 import { FormAlumnoComponent } from './components/form-alumno/form-alumno.component';
 import { GridAlumnoComponent } from './components/grid-alumno/grid-alumno.component';
 import { SharedModule } from '../shared/shared.module';
-import { AppModule } from '../app.module';
+import { NombreCompletoPipe } from '../pipes/nombre-completo.pipe';
+
 
 
 
@@ -22,13 +23,15 @@ import { AppModule } from '../app.module';
   declarations: [
     EditarAlumnoComponent,
     FormAlumnoComponent,
-    GridAlumnoComponent
+    GridAlumnoComponent,
+    NombreCompletoPipe
   ],
   imports: [
     CommonModule,
     AlumnoRoutingModule,
     SharedModule,
-    AppModule
+
+  
   ]
 })
 export class AlumnoModule { }
