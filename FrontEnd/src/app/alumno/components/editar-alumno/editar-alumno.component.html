@@ -1,1 +1,141 @@
-<h1>{{alumnoId | json}}</h1>
+<div class="divGeneral">
+<div class="form-container">
+    <form [formGroup]="formEstudents" (ngSubmit)="editarStudent()" class="validated"  *ngIf="!mostrarForm">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre" formControlName="nombre">
+                <div class="valido"
+                    *ngIf="formEstudents.controls['nombre'].touched && formEstudents.controls['nombre'].valid">Campo
+                    correcto</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['nombre'].dirty && formEstudents.controls['nombre'].errors?.['required']">
+                    El Campo no puede ser Vacio</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['nombre'].dirty && formEstudents.controls['nombre'].errors?.['pattern']">
+                    El Campo es Incorrecto</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Apellido</label>
+                <input type="" class="form-control" id="" formControlName="apellido" placeholder="Apellido">
+                <div class="valido"
+                    *ngIf="formEstudents.controls['apellido'].touched && formEstudents.controls['apellido'].valid">Campo
+                    correcto</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['apellido'].dirty && formEstudents.controls['apellido'].errors?.['required']">
+                    El Campo no puede ser Vacio</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['apellido'].dirty && formEstudents.controls['apellido'].errors?.['pattern']">
+                    El Campo es Incorrecto</div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>D.N.I</label>
+                <input type="" class="form-control" id="" placeholder="Ej: 45365983" formControlName="dni">
+                <div class="valido"
+                    *ngIf="formEstudents.controls['dni'].touched && formEstudents.controls['dni'].valid">Campo correcto
+                </div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['dni'].dirty && formEstudents.controls['dni'].errors?.['required']">El
+                    Campo no puede ser Vacio</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['dni'].dirty && formEstudents.controls['dni'].errors?.['pattern']">El
+                    Campo es Incorrecto</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Fecha de Nacimiento</label>
+                <input type="" class="form-control" id="" placeholder="Ej: 02/02/2004"
+                    formControlName="fecha_nac">
+                <div class="valido"
+                    *ngIf="formEstudents.controls['fecha_nac'].touched && formEstudents.controls['fecha_nac'].valid">
+                    Campo correcto</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['fecha_nac'].dirty && formEstudents.controls['fecha_nac'].errors?.['required']">
+                    El Campo no puede ser Vacio</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['fecha_nac'].dirty && formEstudents.controls['fecha_nac'].errors?.['pattern']">
+                    El Campo es Incorrecto</div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Genero</label>
+                <input type="" class="form-control" id="" placeholder="Ej: Masculino" formControlName="genero">
+                <div class="valido"
+                    *ngIf="formEstudents.controls['genero'].touched && formEstudents.controls['genero'].valid">Campo
+                    correcto</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['genero'].dirty && formEstudents.controls['genero'].errors?.['required']">
+                    El Campo no puede ser Vacio</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['genero'].dirty && formEstudents.controls['genero'].errors?.['pattern']">
+                    El Campo es Incorrecto</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputState">Carrera</label>
+                <select id="inputState" class="form-control" (change)="onCarreraSelected($event)" [value]="">
+                  <option value="" selected>Elegir...</option>
+                  <option value="Ingenieria Espacial">Ingenieria Espacial</option>
+                  <option value="Ingenieria Informatica">Ingenieria Informatica</option>
+                  <option value="Ingenieria Mecanica">Ingenieria Mecanica</option>
+                  <option value="Ingenieria Quimica">Ingenieria Quimica</option>
+                  <option value="Ingenieria Industrial">Ingenieria Industrial</option>
+                  <option value="Ingenieria Informatica">Ingenieria Informatica</option>
+                </select>
+              </div>
+              
+              
+              
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Direccion</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Ej: 9 de Julio 3455"
+                formControlName="direccion">
+            <div class="valido"
+                *ngIf="formEstudents.controls['direccion'].touched && formEstudents.controls['direccion'].valid">Campo
+                correcto</div>
+            <div class="invalido"
+                *ngIf="formEstudents.controls['direccion'].dirty && formEstudents.controls['direccion'].errors?.['required']">
+                El Campo no puede ser Vacio</div>
+            <div class="invalido"
+                *ngIf="formEstudents.controls['direccion'].dirty && formEstudents.controls['direccion'].errors?.['pattern']">
+                El Campo es Incorrecto</div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Provincia</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Ej: Buenos Aires"
+                    formControlName="provincia">
+                <div class="valido"
+                    *ngIf="formEstudents.controls['provincia'].touched && formEstudents.controls['provincia'].valid">
+                    Campo Correcto</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['provincia'].dirty && formEstudents.controls['provincia'].errors?.['required']">
+                    El Campo no puede ser Vacio</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['provincia'].dirty && formEstudents.controls['provincia'].errors?.['pattern']">
+                    El Campo es Incorrecto</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Legajo</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Legajo"
+                    formControlName="legajo">
+                <div class="valido"
+                    *ngIf="formEstudents.controls['legajo'].touched && formEstudents.controls['legajo'].valid">
+                    Campo Correcto</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['legajo'].dirty && formEstudents.controls['legajo'].errors?.['required']">
+                    El Campo no puede ser Vacio</div>
+                <div class="invalido"
+                    *ngIf="formEstudents.controls['legajo'].dirty && formEstudents.controls['legajo'].errors?.['pattern']">
+                    El Campo es Incorrecto</div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-dark" [disabled]="formEstudents.invalid">Editar Alumno</button>
+        <button type="submit" class="btn btn-dark">Volver</button>
+    </form>
+</div>
+</div>
+
+

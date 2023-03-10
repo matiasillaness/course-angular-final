@@ -26,6 +26,13 @@ export class RecursosAlumnoService {
     );
   }
 
+  getAlumnosUni(alumno: Alumno): Observable<Alumno>{
+    return this.http.get<Alumno>(`${env.apiURL}/alumno/${alumno.id}`).pipe(
+      catchError(this.capturarError)
+    );
+  }
+  
+
   postAlumno(alumno: Alumno): Observable<Alumno>{
     return this.http.post<Alumno>(`${env.apiURL}/alumno`, alumno,{
       headers: new HttpHeaders({
@@ -35,8 +42,8 @@ export class RecursosAlumnoService {
       catchError(this.capturarError)
     );
   }
-  editarCurso(alumno: Alumno): Observable<Alumno>{
-    return this.http.put<Alumno>(`${env.apiURL}/cursos/${alumno.id}`, alumno).pipe(
+  editarAlumno(alumno: Alumno): Observable<Alumno>{
+    return this.http.put<Alumno>(`${env.apiURL}/alumno/${alumno.id}`, alumno).pipe(
       catchError(this.capturarError)
     );
   }
@@ -60,16 +67,6 @@ export class RecursosAlumnoService {
   }
 
 
-
-  private alumno: Alumno | null = null;
-
-  getAlumno(): Alumno | null {
-    return this.alumno;
-  }
-
-  setAlumno(alumno: Alumno): void {
-    this.alumno = alumno;
-  }
 
   
 }

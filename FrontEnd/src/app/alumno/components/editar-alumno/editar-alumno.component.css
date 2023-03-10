@@ -1,0 +1,44 @@
+.divGeneral{
+    
+}
+
+
+
+form{
+    width: 50%;
+    height: auto;
+}
+
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.form-control:focus{
+color: var(--bs-body-color);
+background-color: whitesmoke;
+border-color: rgba(29, 29, 29, 0.245);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+outline: 0;
+box-shadow: 0 0 0 .25rem rgba(0, 0, 0, 0.983);
+}
+
+.valido{
+    color: green;
+}
+.invalido{
+    color: red;
+}
+.btn{
+    width: 30%;
+    background: #7b1fa2;
+    border-color: aliceblue;
+    color: white;
+    margin-right: 10px;
+    
+}

@@ -1,5 +1,5 @@
 
-<table mat-table [dataSource]="dataSource">
+<table mat-table [dataSource]="dataSource" *ngIf="!mostrarAcciones">
   <!-- ID Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -60,7 +60,7 @@
       <button mat-icon-button color="primary" routerLink="editar" (click)="GetId(element)">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button color="warn">
+      <button mat-icon-button color="warn" (click)="deleteAlumno(element)">
         <mat-icon>delete</mat-icon>
       </button>
     </td>
@@ -70,5 +70,6 @@
 
 </table>
 
-<app-editar-alumno [alumnoId]="alumno"></app-editar-alumno>
-<router-outlet></router-outlet>
+
+<app-editar-alumno *ngIf="alumno" [alumnoId]="alumno" (editar)="llamarApi()"></app-editar-alumno>
+<router-outlet *ngIf="!alumno"></router-outlet>
