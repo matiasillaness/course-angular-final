@@ -46,15 +46,15 @@
             <div class="form-group col-md-6">
                 <label for="">Fecha de Nacimiento</label>
                 <input type="" class="form-control" id="" placeholder="Ej: 02/02/2004"
-                    formControlName="fechaNacimiento">
+                    formControlName="fecha_nac">
                 <div class="valido"
-                    *ngIf="formEstudents.controls['fechaNacimiento'].touched && formEstudents.controls['fechaNacimiento'].valid">
+                    *ngIf="formEstudents.controls['fechaNacimiento'].touched && formEstudents.controls['fecha_nac'].valid">
                     Campo correcto</div>
                 <div class="invalido"
-                    *ngIf="formEstudents.controls['fechaNacimiento'].dirty && formEstudents.controls['fechaNacimiento'].errors?.['required']">
+                    *ngIf="formEstudents.controls['fecha_nac'].dirty && formEstudents.controls['fecha_nac'].errors?.['required']">
                     El Campo no puede ser Vacio</div>
                 <div class="invalido"
-                    *ngIf="formEstudents.controls['fechaNacimiento'].dirty && formEstudents.controls['fechaNacimiento'].errors?.['pattern']">
+                    *ngIf="formEstudents.controls['fecha_nac'].dirty && formEstudents.controls['fecha_nac'].errors?.['pattern']">
                     El Campo es Incorrecto</div>
             </div>
         </div>

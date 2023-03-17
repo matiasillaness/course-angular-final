@@ -7,11 +7,9 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav class="sidenav" #sidenav>
         <mat-nav-list>
-            <a mat-list-item (click)="sidenav.close()" routerLink="">Inicio</a>
+            <a mat-list-item (click)="sidenav.close()" routerLink="inicio">Inicio</a>
             <a mat-list-item (click)="sidenav.close()" routerLink="alumno/cargar">Cargar Alumno</a>
-            <a mat-list-item (click)="sidenav.close()" routerLink="alumno/tabla">Ver Alumnos</a>
-            <a mat-list-item (click)="sidenav.close()" routerLink="alumno/editar">Editar</a>
-            <a mat-list-item (click)="sidenav.close()" routerLink="">Reportes</a>          
+            <a mat-list-item (click)="sidenav.close()" routerLink="alumno/tabla">Editar y Eliminar Alumnos</a>         
         </mat-nav-list>
     </mat-sidenav>
     <router-outlet></router-outlet>

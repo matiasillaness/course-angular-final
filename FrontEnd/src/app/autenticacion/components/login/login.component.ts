@@ -1,5 +1,8 @@
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { GuardsCheckEnd, Route, Router } from '@angular/router';
+import { AdminGuard } from 'src/app/core/guards/admin/admin.guard';
+import { SesionGuard } from 'src/app/core/guards/sesion/sesion.guard';
 import { LoginService } from '../../services/login.service';
 import { AutenticacionInicioComponent } from '../autenticacion-inicio/autenticacion-inicio.component';
 
@@ -11,13 +14,13 @@ import { AutenticacionInicioComponent } from '../autenticacion-inicio/autenticac
 })
 export class LoginComponent implements OnInit, OnDestroy{
 
-
+  
   formulario !: FormGroup;
 
 
   constructor(
     private loginService: LoginService,
-   
+    private router: Router
   ){ }
   
   ngOnDestroy(): void {
@@ -40,6 +43,7 @@ export class LoginComponent implements OnInit, OnDestroy{
       tipoAcceso: this.formulario.value.tipoAcceso
     };
     this.loginService.login(usuario);
+    this.router.navigate(['inicio'])
   }
 
 }
